@@ -1,0 +1,36 @@
+# Tệp nén tạm thời 
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+
+# Python & Môi trường ảo
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+
+# Thư mục kiểm thử & IDE
+.pytest_cache/
+.coverage
+htmlcov/
+.vscode/
+.idea/
+
+# Hệ điều hành
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+data/raw/
+
+scripts/archive/
+
+data/metadata/raw_sources/

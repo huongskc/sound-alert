@@ -1,0 +1,90 @@
+# Ánh xạ nhãn từ 3 dataset (ESC-50, UrbanSound8K, FSD50K) về 9 lớp sự kiện mục tiêu
+
+project_classes:
+  1: glass_break
+  2: gunshot_explosion
+  3: door_forced
+  4: scream
+  5: cry_help
+  6: fire_alarm_siren
+  7: loud_impact
+  8: air_leak_hiss
+  9: background_normal
+
+dataset_mappings:
+  esc50:
+    glass_break:
+      - "glass_breaking"
+    door_forced:
+      - "door_wood_creak"
+      - "door_wood_knock"
+    scream:
+      - "screaming"
+    cry_help:
+      - "crying_baby"
+    fire_alarm_siren:
+      - "siren"
+    background_normal:
+      - "clock_tick"
+      - "rain"
+      - "wind"
+      - "footsteps"
+      - "keyboard_typing"
+      - "mouse_click"
+      - "breathing"
+      - "coughing"
+      - "snoring"
+      - "drinking_sipping"
+
+  urbansound8k:
+    gunshot_explosion:
+      - "gun_shot"
+    fire_alarm_siren:
+      - "siren"
+    loud_impact:
+      - "drilling"
+      - "jackhammer"
+    background_normal:
+      - "air_conditioner"
+      - "idling_engine"
+
+  fsd50k:
+    glass_break:
+      - "Glass"
+      - "Shatter"
+    gunshot_explosion:
+      - "Gunshot_or_gunfire"
+      - "Explosion"
+      - "Artillery_fire"
+      - "Cap_gun"
+    door_forced:
+      - "Door"
+      - "Doorbell"
+      - "Knock"
+      - "Slam"
+    scream:
+      - "Screaming"
+      - "Yell"
+      - "Shout"
+    cry_help:
+      - "Crying_and_sobbing"
+      - "Baby_cry_or_infant_cry"
+    fire_alarm_siren:
+      - "Siren"
+      - "Alarm"
+      - "Fire_alarm"
+      - "Buzzer"
+      - "Smoke_detector"
+    loud_impact:
+      - "Thud"
+      - "Bang"
+      - "Crash"
+    air_leak_hiss:
+      - "Hiss"
+    background_normal:
+      - "Conversation"
+      - "Whispering"
+      - "Speech"
+      - "Chatter"
+      - "Typing"
+      - "Walk_and_footsteps"
