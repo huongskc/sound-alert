@@ -1,0 +1,53 @@
+# configs/audio_config.yaml
+# Cấu hình chuẩn hóa xử lý tín hiệu âm thanh và trích xuất Log-Mel Spectrogram cho toàn hệ thống
+
+audio:
+  # Tần số lấy mẫu mục tiêu (Hz)
+  sample_rate: 16000
+  
+  # Thời lượng cố định cho mỗi khung âm thanh (giây)
+  duration_seconds: 2.0
+  
+  # Tổng số samples của một khung (16000 * 2.0 = 32000)
+  target_length_samples: 32000
+  
+  # Số kênh âm thanh (1 = Mono)
+  channels: 1
+  
+  # Giới hạn chuẩn hóa biên độ tín hiệu (Peak amplitude scaling)
+  target_peak: 0.95
+
+mel_spectrogram:
+  # Số lượng dải tần Mel (Mel filterbanks)
+  n_mels: 64
+  
+  # Kích thước cửa sổ FFT (samples)
+  n_fft: 1024
+  
+  # Bước nhảy giữa các khung FFT (samples - 50% overlap với n_fft 1024)
+  hop_length: 512
+  
+  # Kích thước cửa sổ hàm làm mượt (samples)
+  win_length: 1024
+  
+  # Cửa sổ phân tích (Hann window)
+  window_fn: "hann"
+  
+  # Dải tần số quan tâm (Hz)
+  f_min: 50.0
+  f_max: 8000.0   # Tần số Nyquist = sample_rate / 2
+  
+  # Thang đo năng lượng (2.0 = Power spectrogram)
+  power: 2.0
+  
+  # Dải động tối đa khi chuyển đổi sang decibel (dB)
+  top_db: 80.0
+  
+  # Chuẩn hóa ma trận ảnh phổ Log-Mel về khoảng [0, 1]
+  normalize_min_max: true
+
+# Kích thước tensor đầu ra chuẩn cho mạng Custom 2D-CNN: [batch_size, 1, 64, 63]
+tensor_shape:
+  channels: 1
+  freq_bins: 64
+  time_steps: 63
