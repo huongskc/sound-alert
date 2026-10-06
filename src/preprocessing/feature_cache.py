@@ -1,13 +1,9 @@
 """
 src/preprocessing/feature_cache.py
 
-Module quản lý và nạp bộ nhớ đệm đặc trưng Log-Mel Spectrogram (Mã W3-02):
-1. Cung cấp lớp FeatureCache nạp siêu tốc mảng X_<split>.npy và y_<split>.npy.
-2. Hỗ trợ 2 chế độ nạp:
-   - in_memory: Nạp trực tiếp toàn bộ vào RAM (chỉ ~33 MB, thời gian truy xuất < 0.1 µs).
-   - memory_mapped: Ánh xạ đĩa trực tiếp qua mmap_mode='r' cho máy cấu hình RAM thấp.
-3. Cung cấp lớp CachedAudioDataset kế thừa torch.utils.data.Dataset tương thích 100% với PyTorch DataLoader.
-4. Đo lường tốc độ nạp dữ liệu (Throughput benchmarks) và mức tiêu hao bộ nhớ.
+Module quản lý và nạp bộ nhớ đệm đặc trưng Log-Mel Spectrogram:
+- FeatureCache: Nạp dữ liệu đặc trưng mảng NumPy (hỗ trợ in-memory RAM hoặc memory-mapped disk).
+- CachedAudioDataset: Dataset wrapper tương thích với PyTorch DataLoader, hỗ trợ data augmentation.
 """
 
 import sys

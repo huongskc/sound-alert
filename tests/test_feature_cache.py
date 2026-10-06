@@ -1,7 +1,7 @@
 """
 tests/test_feature_cache.py
 
-Unit tests cho module FeatureCache và CachedAudioDataset (W3-02):
+Unit tests cho module FeatureCache và CachedAudioDataset:
 - Kiểm tra tính hợp lệ của FeatureCache
 - Kiểm tra CachedAudioDataset với dữ liệu giả lập và dữ liệu thực tế
 - Kiểm tra tính tương thích với PyTorch DataLoader

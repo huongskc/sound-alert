@@ -1,7 +1,7 @@
 """
 scripts/benchmark_feature_cache.py
 
-Kiểm thử tốc độ nạp đặc trưng và tối ưu bộ nhớ đệm (Mã W3-02):
+Kiểm thử tốc độ nạp đặc trưng và tối ưu bộ nhớ đệm:
 1. Nạp và kiểm tra tính hợp lệ của toàn bộ cache train / val / test.
 2. Đo lường tốc độ cấp phát dữ liệu (Throughput - samples/giây) qua PyTorch DataLoader.
 3. So sánh hiệu năng giữa chế độ In-Memory và Memory-Mapped (mmap).
@@ -27,7 +27,7 @@ from src.preprocessing.feature_cache import FeatureCache
 
 def run_cache_benchmark():
     print("=" * 65)
-    print("      BENCHMARK HIỆU NĂNG BỘ NHỚ ĐỆM ĐẶC TRƯNG (W3-02)")
+    print("      BENCHMARK HIỆU NĂNG BỘ NHỚ ĐỆM ĐẶC TRƯNG")
     print("=" * 65)
 
     cache_dir = PROJECT_ROOT / "data" / "processed" / "features"
@@ -75,7 +75,7 @@ def run_cache_benchmark():
     is_fast = bench["samples_per_sec"] >= 5000  # Kỳ vọng >= 5.000 samples/sec
     print("\n" + "=" * 65)
     if is_fast:
-        print(">>> ĐẠT CHUẨN NGHIỆM THU W3-02: BỘ NHỚ ĐỆM TỐC ĐỘ CỰC CAO! <<<")
+        print(">>> HOÀN TẤT KIỂM THỬ: BỘ NHỚ ĐỆM TỐC ĐỘ CỰC CAO! <<<")
         print(f"Throughput đạt {bench['samples_per_sec']:,.0f} samples/s. Sẵn sàng cho huấn luyện CNN!")
     else:
         print(">>> BỘ NHỚ ĐỆM HOẠT ĐỘNG BÌNH THƯỜNG <<<")

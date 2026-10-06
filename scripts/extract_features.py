@@ -1,7 +1,7 @@
 """
 scripts/extract_features.py
 
-Pipeline trích xuất đặc trưng Log-Mel Spectrogram hàng loạt và lưu cache .npy (Mã W3-01):
+Pipeline trích xuất đặc trưng Log-Mel Spectrogram hàng loạt và lưu cache .npy:
 1. Nạp danh mục từ data/metadata/dataset_v1_manifest.csv (2.036 clips).
 2. Sử dụng AudioProcessor để chuẩn hóa và trích xuất Log-Mel tensor [1, 64, 63].
 3. Lưu bộ nhớ đệm kép (Dual-cache):
@@ -36,7 +36,7 @@ OUTPUT_DIR = PROJECT_ROOT / "data" / "processed" / "features"
 
 def extract_features(num_workers: int = 8):
     print("=" * 65)
-    print("      PIPELINE TRÍCH XUẤT ĐẶC TRƯNG LOG-MEL SPECTROGRAM (W3-01)")
+    print("      PIPELINE TRÍCH XUẤT ĐẶC TRƯNG LOG-MEL SPECTROGRAM")
     print("=" * 65)
 
     if not MANIFEST_PATH.exists():
@@ -172,7 +172,7 @@ def extract_features(num_workers: int = 8):
     total_feature_bytes = sum(f.stat().st_size for f in OUTPUT_DIR.rglob("*") if f.is_file())
     print(f"[THỐNG KÊ] Tổng dung lượng toàn bộ cache đặc trưng: {total_feature_bytes / (1024 * 1024):.2f} MB")
     print("\n" + "=" * 65)
-    print(">>> TỔNG KẾT: TRÍCH XUẤT VÀ LƯU CACHE ĐẶC TRƯNG THÀNH CÔNG (W3-01)! <<<")
+    print(">>> TỔNG KẾT: TRÍCH XUẤT VÀ LƯU CACHE ĐẶC TRƯNG THÀNH CÔNG! <<<")
     print("=" * 65)
     return True
 
