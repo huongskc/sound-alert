@@ -35,4 +35,3 @@ scripts/archive/
 
 data/metadata/raw_sources/
 reports/*.wav
-data/processed/features/
